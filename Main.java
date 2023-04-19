@@ -13,11 +13,13 @@ public class Main {
         shifts.add(shift3);
 
         Employee emp1 = new Employee("Alice", List.of("9:00", "10:00", "11:00"));
-        Employee emp2 = new Employee("Bob", List.of("14:00", "15:00", "16:00"));
+        Employee emp2 = new Employee("Bob", List.of("17:00", "18:00", "19:00"));
+        Employee emp3 = new Employee("Toronto", List.of("01:00", "02:00", "03:00"));
 
         List<Employee> employees = new ArrayList<Employee>();
         employees.add(emp1);
         employees.add(emp2);
+        employees.add(emp3);
 
         Roster roster = new Roster(shifts, employees);
         roster.assignShifts();
