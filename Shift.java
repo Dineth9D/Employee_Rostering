@@ -4,9 +4,9 @@ public class Shift {
     private String endTime;
 
     public Shift(String name, String start, String end) {
-        this.shiftName = name;
-        this.startTime = start;
-        this.endTime = end;
+        this.shiftName = name; // name of the shift
+        this.startTime = start; // start time of the shift
+        this.endTime = end; // end time of the shift
     }
 
     public String getName() {

@@ -10,6 +10,7 @@ public class Roster {
     this.employees = empList;
   }
 
+  // assign employees to shifts based on their availability.
   public void assignShifts() {
     for (Shift shift : shifts) {
       System.out.println("\nShift: " + shift.getName());
