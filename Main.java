@@ -24,5 +24,4 @@ public class Main {
         Roster roster = new Roster(shifts, employees);
         roster.assignShifts();
     }
-
 }
