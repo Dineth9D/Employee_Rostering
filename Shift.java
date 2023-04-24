@@ -1,16 +1,16 @@
 public class Shift {
-    private String shiftName;
+    private String name;
     private String startTime;
     private String endTime;
 
-    public Shift(String name, String start, String end) {
-        this.shiftName = name; // name of the shift
-        this.startTime = start; // start time of the shift
-        this.endTime = end; // end time of the shift
+    public Shift(String name, String startTime, String endTime) {
+        this.name = name; // name of the shift
+        this.startTime = startTime; // start time of the shift
+        this.endTime = endTime; // end time of the shift
     }
 
     public String getName() {
-        return shiftName;
+        return name;
     }
 
     public String getStartTime() {

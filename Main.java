@@ -1,27 +1,30 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Shift shift1 = new Shift("Morning Shift", "9:00", "17:00");
-        Shift shift2 = new Shift("Afternoon Shift", "17:00", "01:00");
-        Shift shift3 = new Shift("Midnight Shift", "01:00", "09:00");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of employees: ");
+        int numEmployees = scanner.nextInt();
 
-        List<Shift> shifts = new ArrayList<Shift>();
-        shifts.add(shift1);
-        shifts.add(shift2);
-        shifts.add(shift3);
+        List<Employee> employeeList = new ArrayList<>();
+        for (int i = 1; i <= numEmployees; i++) {
+            System.out.print("Enter name for employee " + i + ": ");
+            String name = scanner.next();
+            System.out.print("Enter availability (comma-separated list of times) for employee " + i + ": ");
+            String avail = scanner.next();
+            Employee employee = new Employee(name, avail.split(","));
+            employeeList.add(employee);
+        }
 
-        Employee emp1 = new Employee("Alice", List.of("9:00", "10:00", "11:00"));
-        Employee emp2 = new Employee("Bob", List.of("17:00", "18:00", "19:00"));
-        Employee emp3 = new Employee("Toronto", List.of("01:00", "02:00", "03:00"));
+        List<Shift> shiftList = new ArrayList<>();
+        shiftList.add(new Shift("Morning", "8:00am", "12:00pm"));
+        shiftList.add(new Shift("Afternoon", "1:00pm", "5:00pm"));
 
-        List<Employee> employees = new ArrayList<Employee>();
-        employees.add(emp1);
-        employees.add(emp2);
-        employees.add(emp3);
-
-        Roster roster = new Roster(shifts, employees);
+        Roster roster = new Roster(shiftList, employeeList);
         roster.assignShifts();
+
+        scanner.close();
     }
 }
