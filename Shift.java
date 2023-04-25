@@ -1,23 +1,19 @@
+import java.time.LocalTime;
+
 public class Shift {
     private String name;
-    private String startTime;
-    private String endTime;
+    private Interval interval;
 
-    public Shift(String name, String startTime, String endTime) {
-        this.name = name; // name of the shift
-        this.startTime = startTime; // start time of the shift
-        this.endTime = endTime; // end time of the shift
+    public Shift(String name, LocalTime startTime, LocalTime endTime) {
+        this.name = name;
+        this.interval = new Interval(startTime, endTime);
     }
 
     public String getName() {
         return name;
     }
 
-    public String getStartTime() {
-        return startTime;
-    }
-
-    public String getEndTime() {
-        return endTime;
+    public Interval getInterval() {
+        return interval;
     }
 }

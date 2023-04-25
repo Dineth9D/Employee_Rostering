@@ -1,0 +1,4 @@
+﻿John,Daily:08:00am-04:00pm;Mon,Tue,Wed:12:00am-08:00am;Thu,Fri,Sat:04:00pm-12:00am
+Jane,Mon,Tue,Wed,Thu,Fri:08:00am-04:00pm;Sat:12:00am-08:00am;Sun:04:00pm-12:00am
+Bob,Daily:12:00am-08:00am;Sat,Sun:08:00am-04:00pm;Mon,Tue,Wed,Thu,Fri:04:00pm-12:00am
+Alice,Daily:04:00pm-12:00am;Sat,Sun:12:00am-08:00am;Mon,Tue,Wed,Thu,Fri:08:00am-04:00pm
