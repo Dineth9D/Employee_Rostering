@@ -1,30 +1,53 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of employees: ");
-        int numEmployees = scanner.nextInt();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter the number of employees: ");
+            int numEmployees = scanner.nextInt();
+            scanner.nextLine();
 
-        List<Employee> employeeList = new ArrayList<>();
-        for (int i = 1; i <= numEmployees; i++) {
-            System.out.print("Enter name for employee " + i + ": ");
-            String name = scanner.next();
-            System.out.print("Enter availability (comma-separated list of times) for employee " + i + ": ");
-            String avail = scanner.next();
-            Employee employee = new Employee(name, avail.split(","));
-            employeeList.add(employee);
+            List<Employee> employees = new ArrayList<>(numEmployees);
+
+            try {
+                File file = new File("employees.csv");
+                try (Scanner fileScanner = new Scanner(file)) {
+                    while (fileScanner.hasNextLine()) {
+                        String line = fileScanner.nextLine();
+                        String[] parts = line.split(",");
+                        String name = parts[0];
+                        String[] availableTimes = parts[1].split("-");
+                        LocalTime startTime = LocalTime.parse(availableTimes[0]);
+                        LocalTime endTime = LocalTime.parse(availableTimes[1]);
+
+                        Employee employee = new Employee(name, new Interval(start, end));
+                        employees.add(employee);
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("File not found.");
+                e.printStackTrace();
+            }
+
+            List<Shift> shiftList = new ArrayList<>();
+            shiftList.add(new Shift("Morning", LocalTime.parse("08:00"), LocalTime.parse("16:00")));
+            shiftList.add(new Shift("Afternoon", LocalTime.parse("16:00"), LocalTime.parse("00:00")));
+            shiftList.add(new Shift("Midnight", LocalTime.parse("00:00"), LocalTime.parse("08:00")));
+
+            for (Shift shift : shiftList) {
+                System.out.println("=== " + shift.getName() + " Shift ===");
+                for (Employee employee : employees) {
+                    if (employee.isAvailableForShift(shift)) {
+                        System.out.println(shift.getName() + " shift: " + employee.getName());
+                    }
+                }
+            }
+
         }
-
-        List<Shift> shiftList = new ArrayList<>();
-        shiftList.add(new Shift("Morning", "8:00am", "12:00pm"));
-        shiftList.add(new Shift("Afternoon", "1:00pm", "5:00pm"));
-
-        Roster roster = new Roster(shiftList, employeeList);
-        roster.assignShifts();
-
-        scanner.close();
     }
 }
