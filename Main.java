@@ -33,9 +33,9 @@ public class Main {
         }
 
         List<Shift> shiftList = new ArrayList<>();
-        shiftList.add(new Shift("Morning", LocalTime.parse("08:00 AM"), LocalTime.parse("16:00 PM")));
-        shiftList.add(new Shift("Afternoon", LocalTime.parse("16:00 PM"), LocalTime.parse("00:00 AM")));
-        shiftList.add(new Shift("Midnight", LocalTime.parse("00:00 AM"), LocalTime.parse("08:00 AM")));
+        shiftList.add(new Shift("Morning", LocalTime.parse("08:00"), LocalTime.parse("16:00")));
+        shiftList.add(new Shift("Afternoon", LocalTime.parse("16:00"), LocalTime.parse("00:00")));
+        shiftList.add(new Shift("Midnight", LocalTime.parse("00:00"), LocalTime.parse("08:00")));
 
         for (Shift shift : shiftList) {
             System.out.println("=== " + shift.getName() + " Shift ===");

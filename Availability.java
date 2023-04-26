@@ -1,4 +1,5 @@
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.HashSet;
@@ -25,10 +26,17 @@ public class Availability {
     public boolean includes(Shift shift) {
         LocalDateTime shiftStart = shift.getStart();
         LocalDateTime shiftEnd = shift.getEnd();
-        LocalDateTime intervalStart = startDateTime;
-        LocalDateTime intervalEnd = endDateTime;
+        LocalDateTime intervalStart;
+        LocalDateTime intervalEnd;
 
-        // Check if shift starts and ends within the interval
+        if (interval != null) {
+            intervalStart = interval.getStart();
+            intervalEnd = interval.getEnd();
+        } else {
+            intervalStart = LocalDateTime.of(LocalDate.now(), startTime);
+            intervalEnd = LocalDateTime.of(LocalDate.now(), endTime);
+        }
+
         if (shiftStart.isEqual(intervalStart) || shiftStart.isAfter(intervalStart)) {
             if (shiftEnd.isEqual(intervalEnd) || shiftEnd.isBefore(intervalEnd)) {
                 return true;
