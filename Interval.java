@@ -1,19 +1,25 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Interval {
-    private LocalTime start;
-    private LocalTime end;
+    private LocalDateTime start;
+    private LocalDateTime end;
 
-    public Interval(LocalTime start, LocalTime end) {
+    public Interval(LocalDateTime start, LocalDateTime end) {
         this.start = start;
         this.end = end;
     }
 
-    public LocalTime getStart() {
+    public Interval(LocalTime startTime, LocalTime endTime) {
+        this(LocalDateTime.of(LocalDate.now(), startTime), LocalDateTime.of(LocalDate.now(), endTime));
+    }
+
+    public LocalDateTime getStart() {
         return start;
     }
 
-    public LocalTime getEnd() {
+    public LocalDateTime getEnd() {
         return end;
     }
 
@@ -21,11 +27,11 @@ public class Interval {
         return !(this.end.isBefore(other.start) || this.start.isAfter(other.end));
     }
 
-    public Interval getInterval() {
-        return null;
+    public Interval withStart(LocalDateTime newStart) {
+        return new Interval(newStart, this.end);
     }
 
-    public String[] split(String string) {
-        return null;
+    public Interval withEnd(LocalDateTime newEnd) {
+        return new Interval(this.start, newEnd);
     }
 }

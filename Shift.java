@@ -16,4 +16,8 @@ public class Shift {
     public Interval getInterval() {
         return interval;
     }
+
+    public boolean contains(LocalTime time) {
+        return interval.contains(time);
+    }
 }
