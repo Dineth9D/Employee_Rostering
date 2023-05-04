@@ -27,6 +27,7 @@ public class App
             // Get the database and the employees collection
             MongoDatabase database = mongoClient.getDatabase("employee_rostering_db");
             MongoCollection<Document> employeesCollection = database.getCollection("employees");
+            employeesCollection.find().first();
 
             // Create the employees table if it does not exist
             employeesCollection.createIndex(Indexes.ascending("name", "day", "start_time", "end_time"));
@@ -130,8 +131,7 @@ class EmployeeParser {
         try {
             Gson gson = new Gson();
             Type employeeListType = new TypeToken<List<Employee>>(){}.getType();
-            List<Employee> employeeList = gson.fromJson(new FileReader(fileName), employeeListType);
-            return employeeList;
+            return gson.fromJson(new FileReader(fileName), employeeListType);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
