@@ -15,7 +15,7 @@ import java.util.List;
 public class App
 {
     public static void main(String[] args) {
-        String connectionString = "mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority";
+        String connectionString = "mongodb+srv://admin:*****@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority";
         try {
             // Connect to the database
             MongoClient mongoClient = MongoClients.create(connectionString);
