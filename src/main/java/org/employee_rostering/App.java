@@ -9,13 +9,17 @@ import com.mongodb.ServerApiVersion;
 import com.mongodb.client.*;
 import com.mongodb.client.model.Indexes;
 import org.bson.Document;
-
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Type;
 
 public class App
 {
     public static void main(String[] args) {
-        String connectionString = "mongodb+srv://admin:*****@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority";
+        String connectionString = "mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority";
         try {
             // Connect to the database
             MongoClient mongoClient = MongoClients.create(connectionString);
@@ -123,7 +127,14 @@ class Employee {
 
 class EmployeeParser {
     public static List<Employee> parseEmployees(String fileName) {
-        // code to parse employees from a JSON file
+        try {
+            Gson gson = new Gson();
+            Type employeeListType = new TypeToken<List<Employee>>(){}.getType();
+            List<Employee> employeeList = gson.fromJson(new FileReader(fileName), employeeListType);
+            return employeeList;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }
