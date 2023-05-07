@@ -26,13 +26,5 @@ public class Employee {
     public void setAvailability(List<Availability> availability) {
         this.availability = availability;
     }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", availability=" + availability +
-                '}';
-    }
 }
 

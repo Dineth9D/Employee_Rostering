@@ -24,12 +24,4 @@ public class Availability {
     public void setShift(String shift) {
         this.shift = shift;
     }
-
-    @Override
-    public String toString() {
-        return "Availability{" +
-                "day='" + day + '\'' +
-                ", shift='" + shift + '\'' +
-                '}';
-    }
 }

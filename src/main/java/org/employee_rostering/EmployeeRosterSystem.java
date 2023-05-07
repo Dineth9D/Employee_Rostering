@@ -76,15 +76,18 @@ public class EmployeeRosterSystem {
     }
 
     public void printRoster() {
+        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
         System.out.println("Employee Roster:");
         for (String shift : SHIFTS) {
             System.out.println("Shift: " + shift);
-            for (int day = 1; day <= 7; day++) {
-                System.out.println("Day " + day + ": " + getEmployeeForShift(day, shift));
+            for (int day = 0; day < 7; day++) {
+                System.out.println(daysOfWeek[day] + ": " + getEmployeeForShift(day + 1, shift));
             }
             System.out.println();
         }
     }
+
 
     private String getEmployeeForShift(int day, String shift) {
         List<String> employeesForShift = new ArrayList<>();
