@@ -8,6 +8,7 @@ import com.mongodb.client.model.Indexes;
 import org.bson.Document;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class EmployeeRosterSystem {
@@ -17,13 +18,12 @@ public class EmployeeRosterSystem {
 
     private final List<Employee> employees;
     private final MongoClient mongoClient;
-    private final MongoDatabase database;
     private final MongoCollection<Document> employeesCollection;
 
     public EmployeeRosterSystem(String connectionString, List<Employee> employees) {
         this.employees = employees;
         this.mongoClient = MongoClients.create(connectionString);
-        this.database = mongoClient.getDatabase(DATABASE_NAME);
+        MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
         this.employeesCollection = database.getCollection(COLLECTION_NAME);
     }
 
@@ -58,20 +58,29 @@ public class EmployeeRosterSystem {
         employeesCollection.createIndex(Indexes.ascending("name", "day", "shift"));
     }
 
+    // randomly assign employees each day
     public void insertEmployees() {
         List<Document> documents = new ArrayList<>();
-        for (Employee employee : employees) {
-            String name = employee.getName();
-            List<Availability> availabilityList = employee.getAvailability();
-            for (Availability availability : availabilityList) {
-                String day = availability.getDay();
-                String shift = availability.getShift();
+        List<Employee> shuffledEmployees = new ArrayList<>(employees);
+        Collections.shuffle(shuffledEmployees);
+
+        int employeeIndex = 0;
+
+        for (int day = 1; day <= 7; day++) {
+            for (String shift : SHIFTS) {
+                String name = shuffledEmployees.get(employeeIndex).getName();
                 Document document = new Document("name", name)
                         .append("day", day)
                         .append("shift", shift);
                 documents.add(document);
+
+                employeeIndex++;
+                if (employeeIndex >= shuffledEmployees.size()) {
+                    employeeIndex = 0; // Start from the beginning of the list
+                }
             }
         }
+
         employeesCollection.insertMany(documents);
     }
 
