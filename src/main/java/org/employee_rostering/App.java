@@ -1,20 +1,21 @@
 package org.employee_rostering;
 
 
-import com.mongodb.ConnectionString;
-import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
-import com.mongodb.ServerApi;
-import com.mongodb.ServerApiVersion;
-import com.mongodb.client.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Indexes;
-import org.bson.Document;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.util.List;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
+import java.util.List;
+import org.bson.Document;
+
 
 public class App
 {
@@ -47,6 +48,17 @@ public class App
                                 .append("start_time", startTime)
                                 .append("end_time", endTime);
                         employeesCollection.insertOne(document);
+                    }
+                }
+                for (Employee employee : employeeList) {
+                    String name = employee.getName();
+                    List<Availability> availabilityList = employee.getAvailability();
+                    System.out.println(name + ":");
+                    for (Availability availability : availabilityList) {
+                        String day = availability.getDay();
+                        String startTime = availability.getStartTime();
+                        String endTime = availability.getEndTime();
+                        System.out.println(day + " " + startTime + " - " + endTime);
                     }
                 }
             } else {
@@ -125,6 +137,7 @@ class Employee {
                 '}';
     }
 }
+
 
 class EmployeeParser {
     public static List<Employee> parseEmployees(String fileName) {
