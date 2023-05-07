@@ -1,151 +1,137 @@
 [
   {
-    "name": "John Doe",
+    "name": "John",
     "availability": [
       {
-        "day": "Monday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "1",
+        "shift": "9am-5pm"
       },
       {
-        "day": "Tuesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "2",
+        "shift": "5pm-1am"
       },
       {
-        "day": "Wednesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
-      },
-      {
-        "day": "Thursday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
-      },
-      {
-        "day": "Friday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "3",
+        "shift": "1am-9am"
       }
     ]
   },
   {
-    "name": "Jane Smith",
+    "name": "Alice",
     "availability": [
       {
-        "day": "Monday",
-        "start_time": "8:00AM",
-        "end_time": "4:00PM"
+        "day": "1",
+        "shift": "5pm-1am"
       },
       {
-        "day": "Tuesday",
-        "start_time": "8:00AM",
-        "end_time": "4:00PM"
+        "day": "2",
+        "shift": "1am-9am"
       },
       {
-        "day": "Wednesday",
-        "start_time": "8:00AM",
-        "end_time": "4:00PM"
-      },
-      {
-        "day": "Thursday",
-        "start_time": "8:00AM",
-        "end_time": "4:00PM"
-      },
-      {
-        "day": "Friday",
-        "start_time": "8:00AM",
-        "end_time": "4:00PM"
+        "day": "3",
+        "shift": "9am-5pm"
       }
     ]
   },
   {
-    "name": "Bob Johnson",
+    "name": "Bob",
     "availability": [
       {
-        "day": "Monday",
-        "start_time": "7:00AM",
-        "end_time": "3:00PM"
+        "day": "1",
+        "shift": "1am-9am"
       },
       {
-        "day": "Tuesday",
-        "start_time": "7:00AM",
-        "end_time": "3:00PM"
+        "day": "2",
+        "shift": "9am-5pm"
       },
       {
-        "day": "Wednesday",
-        "start_time": "7:00AM",
-        "end_time": "3:00PM"
-      },
-      {
-        "day": "Thursday",
-        "start_time": "7:00AM",
-        "end_time": "3:00PM"
-      },
-      {
-        "day": "Friday",
-        "start_time": "7:00AM",
-        "end_time": "3:00PM"
+        "day": "3",
+        "shift": "5pm-1am"
       }
     ]
   },
   {
-    "name": "Alice Brown",
+    "name": "Emma",
     "availability": [
       {
-        "day": "Monday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "1",
+        "shift": "9am-5pm"
       },
       {
-        "day": "Tuesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "2",
+        "shift": "1am-9am"
       },
       {
-        "day": "Wednesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
-      },
-      {
-        "day": "Thursday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
-      },
-      {
-        "day": "Friday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "3",
+        "shift": "5pm-1am"
       }
     ]
   },
   {
-    "name": "Jimmy Falcon",
+    "name": "David",
     "availability": [
       {
-        "day": "Monday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "1",
+        "shift": "5pm-1am"
       },
       {
-        "day": "Tuesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "2",
+        "shift": "9am-5pm"
       },
       {
-        "day": "Wednesday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "3",
+        "shift": "1am-9am"
+      }
+    ]
+  },
+  {
+    "name": "Olivia",
+    "availability": [
+      {
+        "day": "1",
+        "shift": "1am-9am"
       },
       {
-        "day": "Thursday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "2",
+        "shift": "5pm-1am"
       },
       {
-        "day": "Friday",
-        "start_time": "9:00AM",
-        "end_time": "5:00PM"
+        "day": "3",
+        "shift": "9am-5pm"
+      }
+    ]
+  },
+  {
+    "name": "James",
+    "availability": [
+      {
+        "day": "1",
+        "shift": "5pm-1am"
+      },
+      {
+        "day": "2",
+        "shift": "9am-5pm"
+      },
+      {
+        "day": "3",
+        "shift": "1am-9am"
+      }
+    ]
+  },
+  {
+    "name": "Sophia",
+    "availability": [
+      {
+        "day": "1",
+        "shift": "1am-9am"
+      },
+      {
+        "day": "2",
+        "shift": "5pm-1am"
+      },
+      {
+        "day": "3",
+        "shift": "9am-5pm"
       }
     ]
   }

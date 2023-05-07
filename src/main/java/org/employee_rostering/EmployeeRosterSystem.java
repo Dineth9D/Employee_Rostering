@@ -13,7 +13,6 @@ import java.util.List;
 public class EmployeeRosterSystem {
     private static final String DATABASE_NAME = "employee_rostering_db";
     private static final String COLLECTION_NAME = "employees";
-    private static final int SHIFTS_PER_DAY = 3;
     private static final String[] SHIFTS = {"9am-5pm", "5pm-1am", "1am-9am"};
 
     private final List<Employee> employees;
@@ -60,6 +59,7 @@ public class EmployeeRosterSystem {
     }
 
     public void insertEmployees() {
+        List<Document> documents = new ArrayList<>();
         for (Employee employee : employees) {
             String name = employee.getName();
             List<Availability> availabilityList = employee.getAvailability();
@@ -69,9 +69,10 @@ public class EmployeeRosterSystem {
                 Document document = new Document("name", name)
                         .append("day", day)
                         .append("shift", shift);
-                employeesCollection.insertOne(document);
+                documents.add(document);
             }
         }
+        employeesCollection.insertMany(documents);
     }
 
     public void printRoster() {
