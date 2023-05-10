@@ -1,119 +1,99 @@
 package org.employee_rostering;
 
+import com.mongodb.*;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Indexes;
 import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistries;
+import org.bson.codecs.pojo.PojoCodecProvider;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.List;
 
 public class EmployeeRosterSystem {
-    private static final String DATABASE_NAME = "employee_rostering_db";
-    private static final String COLLECTION_NAME = "employees";
-    private static final String[] SHIFTS = {"9am-5pm", "5pm-1am", "1am-9am"};
+    private MongoClient mongoClient;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
 
-    private final List<Employee> employees;
-    private final MongoClient mongoClient;
-    private final MongoCollection<Document> employeesCollection;
+    public EmployeeRosterSystem() {
+        // Connect to MongoDB
+        // Replace the uri string with your MongoDB deployment's connection string.
+        ConnectionString connString = new ConnectionString("mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority");
 
-    public EmployeeRosterSystem(String connectionString, List<Employee> employees) {
-        this.employees = employees;
-        this.mongoClient = MongoClients.create(connectionString);
-        MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
-        this.employeesCollection = database.getCollection(COLLECTION_NAME);
+        ServerApi serverApi = ServerApi.builder()
+                .version(ServerApiVersion.V1)
+                .build();
+
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connString)
+                .codecRegistry(
+                        CodecRegistries.fromRegistries(
+                                MongoClientSettings.getDefaultCodecRegistry(),
+                                CodecRegistries.fromProviders(
+                                        PojoCodecProvider.builder().automatic(true).build()
+                                )
+                        )
+                )
+                .retryWrites(true)
+                .build();
+
+        // Create a new client and connect to the server
+        mongoClient = MongoClients.create(settings);
+
+        try {
+            // Send a ping to confirm a successful connection
+            database = mongoClient.getDatabase("employee_rostering_db");
+            collection = database.getCollection("employees");
+            database.runCommand(new Document("ping", 1));
+            System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+        } catch (MongoException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadEmployeeData(List<Employee> employees) {
+        for (Employee employee : employees) {
+            Document doc = new Document("name", employee.getName())
+                    .append("availability", employee.getAvailability());
+            collection.insertOne(doc);
+        }
+    }
+
+    public void generateRoster() {
+        // TODO: Implement roster generation logic
     }
 
     public static void main(String[] args) {
-        String connectionString = "mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority";
-        String jsonFilePath = "employee_rostering.json";
+        // Load employee data from the JSON file
+        List<Employee> employees = loadEmployeeDataFromJSON();
 
-        // Parse employees from JSON file
-        List<Employee> employees = EmployeeParser.parseEmployees(jsonFilePath);
-        if (employees == null) {
-            System.out.println("Failed to read employee data from JSON file.");
-            return;
-        }
+        if (employees != null) {
+            // Create an instance of the EmployeeRosterSystem
+            EmployeeRosterSystem rosterSystem = new EmployeeRosterSystem();
 
-        // Create an instance of EmployeeRosterSystem
-        EmployeeRosterSystem rosterSystem = new EmployeeRosterSystem(connectionString, employees);
+            // Load employee data into MongoDB
+            rosterSystem.loadEmployeeData(employees);
 
-        // Create employees table in the MongoDB collection
-        rosterSystem.createEmployeesTable();
-
-        // Insert employee data into the collection
-        rosterSystem.insertEmployees();
-
-        // Print the employee roster
-        rosterSystem.printRoster();
-
-        // Close the database connection
-        rosterSystem.closeConnection();
-    }
-
-    public void createEmployeesTable() {
-        employeesCollection.createIndex(Indexes.ascending("name", "day", "shift"));
-    }
-
-    // randomly assign employees each day
-    public void insertEmployees() {
-        List<Document> documents = new ArrayList<>();
-        List<Employee> shuffledEmployees = new ArrayList<>(employees);
-        Collections.shuffle(shuffledEmployees);
-
-        int employeeIndex = 0;
-
-        for (int day = 1; day <= 7; day++) {
-            for (String shift : SHIFTS) {
-                String name = shuffledEmployees.get(employeeIndex).getName();
-                Document document = new Document("name", name)
-                        .append("day", day)
-                        .append("shift", shift);
-                documents.add(document);
-
-                employeeIndex++;
-                if (employeeIndex >= shuffledEmployees.size()) {
-                    employeeIndex = 0; // Start from the beginning of the list
-                }
-            }
-        }
-
-        employeesCollection.insertMany(documents);
-    }
-
-    public void printRoster() {
-        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-
-        System.out.println("Employee Roster:");
-        for (String shift : SHIFTS) {
-            System.out.println("Shift: " + shift);
-            for (int day = 0; day < 7; day++) {
-                System.out.println(daysOfWeek[day] + ": " + getEmployeeForShift(day + 1, shift));
-            }
-            System.out.println();
+            // Generate the roster
+            rosterSystem.generateRoster();
         }
     }
 
-
-    private String getEmployeeForShift(int day, String shift) {
-        List<String> employeesForShift = new ArrayList<>();
-        for (Employee employee : employees) {
-            String name = employee.getName();
-            List<Availability> availabilityList = employee.getAvailability();
-            for (Availability availability : availabilityList) {
-                if (availability.getDay().equals(String.valueOf(day)) && availability.getShift().equals(shift)) {
-                    employeesForShift.add(name);
-                    break;
-                }
-            }
+    public static List<Employee> loadEmployeeDataFromJSON() {
+        try (FileReader reader = new FileReader("employee_rostering.json")) {
+            Gson gson = new Gson();
+            Type employeeListType = new TypeToken<List<Employee>>() {}.getType();
+            return gson.fromJson(reader, employeeListType);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return employeesForShift.isEmpty() ? "No employee available" : String.join(", ", employeesForShift);
-    }
-
-    public void closeConnection() {
-        mongoClient.close();
+        return null;
     }
 }

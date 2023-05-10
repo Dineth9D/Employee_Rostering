@@ -1,10 +1,14 @@
 package org.employee_rostering;
 
-public class Availability {
+public class Shift {
     private String day;
     private String shift;
 
-    public Availability(String day, String shift) {
+    public Shift() {
+        // Default constructor for MongoDB mapping
+    }
+
+    public Shift(String day, String shift) {
         this.day = day;
         this.shift = shift;
     }
@@ -13,12 +17,12 @@ public class Availability {
         return day;
     }
 
-    public String getShift() {
-        return shift;
-    }
-
     public void setDay(String day) {
         this.day = day;
+    }
+
+    public String getShift() {
+        return shift;
     }
 
     public void setShift(String shift) {

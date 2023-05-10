@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Employee {
     private String name;
-    private List<Availability> availability;
+    private List<Shift> availability;
 
-    public Employee(String name, List<Availability> availability) {
+    public Employee(String name, List<Shift> availability) {
         this.name = name;
         this.availability = availability;
     }
@@ -15,16 +15,7 @@ public class Employee {
         return name;
     }
 
-    public List<Availability> getAvailability() {
+    public List<Shift> getAvailability() {
         return availability;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAvailability(List<Availability> availability) {
-        this.availability = availability;
-    }
 }
-
