@@ -1,20 +1,21 @@
 package org.employee_rostering;
 
 import com.mongodb.*;
+import com.mongodb.client.*;
 import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.bson.conversions.Bson;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRosterSystem {
@@ -26,10 +27,6 @@ public class EmployeeRosterSystem {
         // Connect to MongoDB
         // Replace the uri string with your MongoDB deployment's connection string.
         ConnectionString connString = new ConnectionString("mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority");
-
-        ServerApi serverApi = ServerApi.builder()
-                .version(ServerApiVersion.V1)
-                .build();
 
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(connString)
@@ -67,8 +64,33 @@ public class EmployeeRosterSystem {
     }
 
     public void generateRoster() {
-        // TODO: Implement roster generation logic
+        // Get the distinct days from the collection
+        List<String> distinctDays = collection.distinct("availability.day", String.class).into(new ArrayList<>());
+
+        // Iterate over each distinct day
+        for (String day : distinctDays) {
+
+
+            // Query the collection to find employees assigned to the current day
+            Bson filter = Filters.eq("availability.day", day);
+            List<Document> employees = collection.find(filter).into(new ArrayList<>());
+
+            System.out.println("Day: " + day);
+            // Iterate over the assigned employees
+            for (Document employee : employees) {
+                String name = employee.getString("name");
+                Document shift = (Document) employee.get("availability", List.class).get(0);
+                String shiftTime = shift.getString("shift");
+
+
+                System.out.println("Shift: " + shiftTime);
+                System.out.println("Employee: " + name);
+                System.out.println();
+            }
+        }
     }
+
+
 
     public static void main(String[] args) {
         // Load employee data from the JSON file
