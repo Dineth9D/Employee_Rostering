@@ -3,8 +3,8 @@ package org.employee_rostering;
 import java.util.List;
 
 public class Employee {
-    private String name;
-    private List<Shift> availability;
+    private final String name;
+    private final List<Shift> availability;
 
     public Employee(String name, List<Shift> availability) {
         this.name = name;

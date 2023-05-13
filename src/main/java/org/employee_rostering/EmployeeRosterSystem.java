@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRosterSystem {
-    private MongoClient mongoClient;
-    private MongoDatabase database;
     private MongoCollection<Document> collection;
 
     public EmployeeRosterSystem() {
@@ -42,11 +40,11 @@ public class EmployeeRosterSystem {
                 .build();
 
         // Create a new client and connect to the server
-        mongoClient = MongoClients.create(settings);
+        MongoClient mongoClient = MongoClients.create(settings);
 
         try {
             // Send a ping to confirm a successful connection
-            database = mongoClient.getDatabase("employee_rostering_db");
+            MongoDatabase database = mongoClient.getDatabase("employee_rostering_db");
             collection = database.getCollection("employees");
             database.runCommand(new Document("ping", 1));
             System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
