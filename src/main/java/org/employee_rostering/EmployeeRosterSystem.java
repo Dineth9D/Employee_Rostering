@@ -15,8 +15,7 @@ import org.bson.conversions.Bson;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeRosterSystem {
     private MongoCollection<Document> collection;
@@ -47,7 +46,7 @@ public class EmployeeRosterSystem {
             MongoDatabase database = mongoClient.getDatabase("employee_rostering_db");
             collection = database.getCollection("employees");
             database.runCommand(new Document("ping", 1));
-            System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+            System.out.println("Pinged your deployment. You have successfully connected to MongoDB!");
         } catch (MongoException e) {
             e.printStackTrace();
         }
@@ -67,27 +66,44 @@ public class EmployeeRosterSystem {
 
         // Iterate over each distinct day
         for (String day : distinctDays) {
-
+            System.out.println("Day: " + day);
 
             // Query the collection to find employees assigned to the current day
             Bson filter = Filters.eq("availability.day", day);
             List<Document> employees = collection.find(filter).into(new ArrayList<>());
 
-            System.out.println("Day: " + day);
+            // Keep track of assigned employees for each shift
+            Map<String, Set<String>> shiftEmployeesMap = new HashMap<>();
+
             // Iterate over the assigned employees
             for (Document employee : employees) {
                 String name = employee.getString("name");
                 Document shift = (Document) employee.get("availability", List.class).get(0);
                 String shiftTime = shift.getString("shift");
 
+                // Add the employee to the corresponding shift in the map
+                if (shiftEmployeesMap.containsKey(shiftTime)) {
+                    shiftEmployeesMap.get(shiftTime).add(name);
+                } else {
+                    Set<String> employeesSet = new HashSet<>();
+                    employeesSet.add(name);
+                    shiftEmployeesMap.put(shiftTime, employeesSet);
+                }
+            }
 
-                System.out.println("Shift: " + shiftTime);
-                System.out.println("Employee: " + name);
+            // Print the assigned employees for each shift
+            for (Map.Entry<String, Set<String>> entry : shiftEmployeesMap.entrySet()) {
+                String shiftTime = entry.getKey();
+                Set<String> employeesSet = entry.getValue();
+
+                System.out.println("  Shift: " + shiftTime);
+                for (String employee : employeesSet) {
+                    System.out.println("  Employee: " + employee);
+                }
                 System.out.println();
             }
         }
     }
-
 
 
     public static void main(String[] args) {
@@ -107,13 +123,14 @@ public class EmployeeRosterSystem {
     }
 
     public static List<Employee> loadEmployeeDataFromJSON() {
-        try (FileReader reader = new FileReader("employee_rostering.json")) {
-            Gson gson = new Gson();
-            Type employeeListType = new TypeToken<List<Employee>>() {}.getType();
-            return gson.fromJson(reader, employeeListType);
-        } catch (IOException e) {
-            e.printStackTrace();
+            try (FileReader reader = new FileReader("employee_rostering.json")) {
+                Gson gson = new Gson();
+                Type employeeListType = new TypeToken<List<Employee>>() {
+                }.getType();
+                return gson.fromJson(reader, employeeListType);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
-        return null;
     }
-}
