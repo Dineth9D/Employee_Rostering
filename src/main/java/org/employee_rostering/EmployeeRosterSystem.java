@@ -1,5 +1,7 @@
 package org.employee_rostering;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.mongodb.*;
 import com.mongodb.client.*;
 import com.mongodb.client.MongoClient;
@@ -11,14 +13,32 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.bson.conversions.Bson;
+import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
+@Component
 public class EmployeeRosterSystem {
     private MongoCollection<Document> collection;
+
+
+    public static void main(String[] args) {
+        EmployeeRosterSystem employeeRosterSystem = new EmployeeRosterSystem();
+
+        // Load employee data from JSON file
+        List<Employee> employees = loadEmployeeDataFromJSON();
+
+        // Load employee data into MongoDB
+        employeeRosterSystem.loadEmployeeData(employees);
+
+        // Generate roster
+        employeeRosterSystem.generateRoster();
+    }
+
+
 
     public EmployeeRosterSystem() {
         // Connect to MongoDB
@@ -55,7 +75,8 @@ public class EmployeeRosterSystem {
     public void loadEmployeeData(List<Employee> employees) {
         for (Employee employee : employees) {
             Document doc = new Document("name", employee.getName())
-                    .append("availability", employee.getAvailability());
+                    .append("availability", employee.getAvailability())
+                    .append("shiftCount", 0);
             collection.insertOne(doc);
         }
     }
@@ -78,16 +99,19 @@ public class EmployeeRosterSystem {
             // Iterate over the assigned employees
             for (Document employee : employees) {
                 String name = employee.getString("name");
-                Document shift = (Document) employee.get("availability", List.class).get(0);
-                String shiftTime = shift.getString("shift");
+                List<Document> availability = employee.getList("availability", Document.class);
+                if (availability != null && !availability.isEmpty()) {
+                    Document shift = availability.get(0);
+                    String shiftTime = shift.getString("shift");
 
-                // Add the employee to the corresponding shift in the map
-                if (shiftEmployeesMap.containsKey(shiftTime)) {
-                    shiftEmployeesMap.get(shiftTime).add(name);
-                } else {
-                    Set<String> employeesSet = new HashSet<>();
-                    employeesSet.add(name);
-                    shiftEmployeesMap.put(shiftTime, employeesSet);
+                    // Add the employee to the corresponding shift in the map
+                    if (shiftEmployeesMap.containsKey(shiftTime)) {
+                        shiftEmployeesMap.get(shiftTime).add(name);
+                    } else {
+                        Set<String> employeesSet = new HashSet<>();
+                        employeesSet.add(name);
+                        shiftEmployeesMap.put(shiftTime, employeesSet);
+                    }
                 }
             }
 
@@ -106,31 +130,15 @@ public class EmployeeRosterSystem {
     }
 
 
-    public static void main(String[] args) {
-        // Load employee data from the JSON file
-        List<Employee> employees = loadEmployeeDataFromJSON();
-
-        if (employees != null) {
-            // Create an instance of the EmployeeRosterSystem
-            EmployeeRosterSystem rosterSystem = new EmployeeRosterSystem();
-
-            // Load employee data into MongoDB
-            rosterSystem.loadEmployeeData(employees);
-
-            // Generate the roster
-            rosterSystem.generateRoster();
-        }
-    }
-
     public static List<Employee> loadEmployeeDataFromJSON() {
-            try (FileReader reader = new FileReader("employee_rostering.json")) {
-                Gson gson = new Gson();
-                Type employeeListType = new TypeToken<List<Employee>>() {
-                }.getType();
-                return gson.fromJson(reader, employeeListType);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
+        try (FileReader reader = new FileReader("employee_rostering.json")) {
+            Gson gson = new Gson();
+            Type employeeListType = new TypeToken<List<Employee>>() {
+            }.getType();
+            return gson.fromJson(reader, employeeListType);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return null;
     }
+}
