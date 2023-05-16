@@ -1,97 +1,64 @@
 package org.employee_rostering;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.mongodb.*;
-import com.mongodb.client.*;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.model.Filters;
-import org.bson.Document;
-import org.bson.codecs.configuration.CodecRegistries;
-import org.bson.codecs.pojo.PojoCodecProvider;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.bson.conversions.Bson;
-import org.springframework.stereotype.Component;
+import org.bson.Document;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.*;
 
-@Component
-public class EmployeeRosterSystem {
-    private MongoCollection<Document> collection;
+@SpringBootApplication
+public class EmployeeRosterSystem implements CommandLineRunner {
 
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     public static void main(String[] args) {
-        EmployeeRosterSystem employeeRosterSystem = new EmployeeRosterSystem();
+        SpringApplication.run(EmployeeRosterSystem.class, args);
+    }
 
+    @Override
+    public void run(String... args) {
         // Load employee data from JSON file
         List<Employee> employees = loadEmployeeDataFromJSON();
 
         // Load employee data into MongoDB
-        employeeRosterSystem.loadEmployeeData(employees);
+        loadEmployeeData(employees);
 
         // Generate roster
-        employeeRosterSystem.generateRoster();
-    }
-
-
-
-    public EmployeeRosterSystem() {
-        // Connect to MongoDB
-        // Replace the uri string with your MongoDB deployment's connection string.
-        ConnectionString connString = new ConnectionString("mongodb+srv://admin:supersafe@ercluster.xcl52gw.mongodb.net/?retryWrites=true&w=majority");
-
-        MongoClientSettings settings = MongoClientSettings.builder()
-                .applyConnectionString(connString)
-                .codecRegistry(
-                        CodecRegistries.fromRegistries(
-                                MongoClientSettings.getDefaultCodecRegistry(),
-                                CodecRegistries.fromProviders(
-                                        PojoCodecProvider.builder().automatic(true).build()
-                                )
-                        )
-                )
-                .retryWrites(true)
-                .build();
-
-        // Create a new client and connect to the server
-        MongoClient mongoClient = MongoClients.create(settings);
-
-        try {
-            // Send a ping to confirm a successful connection
-            MongoDatabase database = mongoClient.getDatabase("employee_rostering_db");
-            collection = database.getCollection("employees");
-            database.runCommand(new Document("ping", 1));
-            System.out.println("Pinged your deployment. You have successfully connected to MongoDB!");
-        } catch (MongoException e) {
-            e.printStackTrace();
-        }
+        generateRoster();
     }
 
     public void loadEmployeeData(List<Employee> employees) {
+        List<Document> documents = new ArrayList<>();
         for (Employee employee : employees) {
             Document doc = new Document("name", employee.getName())
                     .append("availability", employee.getAvailability())
                     .append("shiftCount", 0);
-            collection.insertOne(doc);
+            documents.add(doc);
         }
+        mongoTemplate.insert(documents, "employees");
     }
 
     public void generateRoster() {
         // Get the distinct days from the collection
-        List<String> distinctDays = collection.distinct("availability.day", String.class).into(new ArrayList<>());
+        List<String> distinctDays = mongoTemplate.getCollection("employees")
+                .distinct("availability.day", String.class).into(new ArrayList<>());
 
         // Iterate over each distinct day
         for (String day : distinctDays) {
             System.out.println("Day: " + day);
 
             // Query the collection to find employees assigned to the current day
-            Bson filter = Filters.eq("availability.day", day);
-            List<Document> employees = collection.find(filter).into(new ArrayList<>());
+            List<Document> employees = mongoTemplate.getCollection("employees")
+                    .find(new Document("availability.day", day)).into(new ArrayList<>());
 
             // Keep track of assigned employees for each shift
             Map<String, Set<String>> shiftEmployeesMap = new HashMap<>();
@@ -105,13 +72,7 @@ public class EmployeeRosterSystem {
                     String shiftTime = shift.getString("shift");
 
                     // Add the employee to the corresponding shift in the map
-                    if (shiftEmployeesMap.containsKey(shiftTime)) {
-                        shiftEmployeesMap.get(shiftTime).add(name);
-                    } else {
-                        Set<String> employeesSet = new HashSet<>();
-                        employeesSet.add(name);
-                        shiftEmployeesMap.put(shiftTime, employeesSet);
-                    }
+                    shiftEmployeesMap.computeIfAbsent(shiftTime, k -> new HashSet<>()).add(name);
                 }
             }
 
@@ -129,8 +90,7 @@ public class EmployeeRosterSystem {
         }
     }
 
-
-    public static List<Employee> loadEmployeeDataFromJSON() {
+    public List<Employee> loadEmployeeDataFromJSON() {
         try (FileReader reader = new FileReader("employee_rostering.json")) {
             Gson gson = new Gson();
             Type employeeListType = new TypeToken<List<Employee>>() {
@@ -142,3 +102,4 @@ public class EmployeeRosterSystem {
         return null;
     }
 }
+

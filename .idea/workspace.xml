@@ -4,7 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="" />
+    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Create as Spring Boot project">
+      <change afterPath="$PROJECT_DIR$/lib/bson-4.8.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/bson-4.9.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/bson-record-codec-4.8.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/bson-record-codec-4.9.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mongodb-driver-core-4.9.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-2.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aop-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-beans-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-core-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-2.2.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-3.0.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-3.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-2.2.2.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-expression-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-tx-5.2.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-tx-6.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/spring-tx-6.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetailsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/employee_rostering/TestDataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/employee_rostering.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,42 +68,56 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PpyHBZ5Pa6tBSFd9gGk8AqHGYZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync",
-    "spring.configuration.checksum": "55cb805a8b234407bed2445671a8c3fb",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Employee Rostering/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.53333336&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;55cb805a8b234407bed2445671a8c3fb&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.EmployeeRosterSystem">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Employee Rostering\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EmployeeRosterSystem">
     <configuration name="EmployeeRosterSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.employee_rostering.EmployeeRosterSystem" />
       <module name="employee-rostering" />
@@ -120,11 +185,34 @@
       <workItem from="1684168885663" duration="251000" />
       <workItem from="1684169308465" duration="130000" />
       <workItem from="1684169448334" duration="751000" />
-      <workItem from="1684170219402" duration="4939000" />
+      <workItem from="1684170219402" duration="6165000" />
+      <workItem from="1684205337271" duration="14062000" />
+      <workItem from="1684227676227" duration="1396000" />
+      <workItem from="1684229189878" duration="207000" />
     </task>
+    <task id="LOCAL-00001" summary="Create as Spring Boot project">
+      <created>1684176163185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684176163185</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create as Spring Boot project">
+      <created>1684176238291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684176238291</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Create as Spring Boot project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create as Spring Boot project" />
   </component>
 </project>
