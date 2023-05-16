@@ -1,20 +1,19 @@
 package org.employee_rostering;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.*;
 
 @SpringBootApplication
+@RestController
 public class EmployeeRosterSystem implements CommandLineRunner {
 
     @Autowired
@@ -26,14 +25,7 @@ public class EmployeeRosterSystem implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Load employee data from JSON file
-        List<Employee> employees = loadEmployeeDataFromJSON();
-
-        // Load employee data into MongoDB
-        loadEmployeeData(employees);
-
-        // Generate roster
-        generateRoster();
+        // Nothing to do here
     }
 
     public void loadEmployeeData(List<Employee> employees) {
@@ -90,16 +82,18 @@ public class EmployeeRosterSystem implements CommandLineRunner {
         }
     }
 
-    public List<Employee> loadEmployeeDataFromJSON() {
-        try (FileReader reader = new FileReader("employee_rostering.json")) {
-            Gson gson = new Gson();
-            Type employeeListType = new TypeToken<List<Employee>>() {
-            }.getType();
-            return gson.fromJson(reader, employeeListType);
-        } catch (IOException e) {
-            e.printStackTrace();
+    @PostMapping("/generate-roster")
+    public ResponseEntity<String> generateRosterFromRequest(@RequestBody List<Employee> employees) {
+        if (employees == null || employees.isEmpty()) {
+            return ResponseEntity.badRequest().body("No employee data provided.");
         }
-        return null;
+
+        // Load employee data into MongoDB
+        loadEmployeeData(employees);
+
+        // Generate roster
+        generateRoster();
+
+        return ResponseEntity.ok("Roster generated successfully.");
     }
 }
-

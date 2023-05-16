@@ -4,57 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Create as Spring Boot project">
-      <change afterPath="$PROJECT_DIR$/lib/bson-4.8.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/bson-4.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/bson-record-codec-4.8.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/bson-record-codec-4.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mongodb-driver-core-4.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-2.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-aop-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-aop-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-beans-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-beans-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-context-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-context-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-core-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-core-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-2.2.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-3.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-commons-3.0.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-2.2.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-expression-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-expression-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-jcl-6.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-tx-5.2.1.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-tx-6.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/spring-tx-6.0.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetailsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/employee_rostering/TestDataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/employee_rostering.json" afterDir="false" />
+    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Set the REST API requests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeDetailsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +142,8 @@
       <workItem from="1684170219402" duration="6165000" />
       <workItem from="1684205337271" duration="14062000" />
       <workItem from="1684227676227" duration="1396000" />
-      <workItem from="1684229189878" duration="207000" />
+      <workItem from="1684229189878" duration="2383000" />
+      <workItem from="1684246136480" duration="4785000" />
     </task>
     <task id="LOCAL-00001" summary="Create as Spring Boot project">
       <created>1684176163185</created>
@@ -204,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684176238291</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Set the REST API requests.">
+      <created>1684229560936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684229560936</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +175,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Create as Spring Boot project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create as Spring Boot project" />
+    <MESSAGE value="Set the REST API requests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set the REST API requests." />
   </component>
 </project>
