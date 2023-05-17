@@ -1,5 +1,8 @@
 package org.employee_rostering;
 
+import java.time.LocalTime;
+import java.util.Date;
+
 public class Shift {
     private String day;
     private String shift;

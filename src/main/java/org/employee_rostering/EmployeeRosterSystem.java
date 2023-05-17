@@ -6,10 +6,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 
 @SpringBootApplication
@@ -42,40 +48,63 @@ public class EmployeeRosterSystem implements CommandLineRunner {
     public void generateRoster() {
         // Get the distinct days from the collection
         List<String> distinctDays = mongoTemplate.getCollection("employees")
-                .distinct("availability.day", String.class).into(new ArrayList<>());
+                .distinct("availability.day", String.class)
+                .into(new ArrayList<>());
 
         // Iterate over each distinct day
-        for (String day : distinctDays) {
+        for (String dayOfWeekStr : distinctDays) {
+            DayOfWeek dayOfWeek = DayOfWeek.valueOf(dayOfWeekStr.toUpperCase(Locale.ENGLISH));
+            LocalDate day = LocalDate.now().with(TemporalAdjusters.nextOrSame(dayOfWeek));
             System.out.println("Day: " + day);
 
             // Query the collection to find employees assigned to the current day
             List<Document> employees = mongoTemplate.getCollection("employees")
-                    .find(new Document("availability.day", day)).into(new ArrayList<>());
+                    .find(new Document("availability.day", dayOfWeekStr)).into(new ArrayList<>());
 
-            // Keep track of assigned employees for each shift
-            Map<String, Set<String>> shiftEmployeesMap = new HashMap<>();
-
-            // Iterate over the assigned employees
+            // Create map of shifts with a queue of employees that are available for that shift
+            Map<LocalTime, Queue<Document>> shiftEmployeeQueueMap = new HashMap<>();
+            for (LocalTime time : Arrays.asList(LocalTime.parse("05:00:00"), LocalTime.parse("13:00:00"), LocalTime.parse("21:00:00"))) {
+                shiftEmployeeQueueMap.put(time, new LinkedList<>());
+            }
             for (Document employee : employees) {
-                String name = employee.getString("name");
                 List<Document> availability = employee.getList("availability", Document.class);
                 if (availability != null && !availability.isEmpty()) {
                     Document shift = availability.get(0);
-                    String shiftTime = shift.getString("shift");
-
-                    // Add the employee to the corresponding shift in the map
-                    shiftEmployeesMap.computeIfAbsent(shiftTime, k -> new HashSet<>()).add(name);
+                    String shiftDayString = shift.getString("day");
+                    if (shiftDayString.equalsIgnoreCase(dayOfWeekStr)) {
+                        LocalTime shiftTime = LocalTime.parse(shift.getString("shift"), DateTimeFormatter.ISO_LOCAL_TIME);
+                        shiftEmployeeQueueMap.get(shiftTime).offer(employee);
+                    }
                 }
             }
 
-            // Print the assigned employees for each shift
-            for (Map.Entry<String, Set<String>> entry : shiftEmployeesMap.entrySet()) {
-                String shiftTime = entry.getKey();
-                Set<String> employeesSet = entry.getValue();
-
-                System.out.println("  Shift: " + shiftTime);
-                for (String employee : employeesSet) {
-                    System.out.println("  Employee: " + employee);
+            // Assign employees to shifts using round-robin scheduling algorithm
+            int numShifts = shiftEmployeeQueueMap.size();
+            int[] shiftIndices = new int[numShifts];
+            int minShiftSize = employees.size() / numShifts;
+            int remainder = employees.size() % numShifts;
+            for (int i = 0; i < numShifts; i++) {
+                shiftIndices[i] = minShiftSize;
+                if (remainder > 0) {
+                    shiftIndices[i]++;
+                    remainder--;
+                }
+            }
+            for (int i = 0; i < numShifts; i++) {
+                LocalTime shiftTime = (LocalTime) shiftEmployeeQueueMap.keySet().toArray()[i];
+                Queue<Document> employeeQueue = shiftEmployeeQueueMap.get(shiftTime);
+                int numEmployeesToAssign = shiftIndices[i];
+                for (int j = 0; j < numEmployeesToAssign; j++) {
+                    Document employee = employeeQueue.poll();
+                    if (employee != null) {
+                        String name = employee.getString("name");
+                        mongoTemplate.getCollection("employees").updateOne(new Document("name", name),
+                                new Document("$inc", new Document("shiftCount", 1))
+                                        .append("$push", new Document("assignedShifts",
+                                                new Document("day", day).append("shift", shiftTime.format(DateTimeFormatter.ISO_LOCAL_TIME)))));
+                        System.out.println("  Shift: " + shiftTime);
+                        System.out.println("  Employee: " + name);
+                    }
                 }
                 System.out.println();
             }
