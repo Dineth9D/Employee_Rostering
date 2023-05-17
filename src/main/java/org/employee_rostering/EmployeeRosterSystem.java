@@ -69,11 +69,12 @@ public class EmployeeRosterSystem implements CommandLineRunner {
             for (Document employee : employees) {
                 List<Document> availability = employee.getList("availability", Document.class);
                 if (availability != null && !availability.isEmpty()) {
-                    Document shift = availability.get(0);
-                    String shiftDayString = shift.getString("day");
-                    if (shiftDayString.equalsIgnoreCase(dayOfWeekStr)) {
-                        LocalTime shiftTime = LocalTime.parse(shift.getString("shift"), DateTimeFormatter.ISO_LOCAL_TIME);
-                        shiftEmployeeQueueMap.get(shiftTime).offer(employee);
+                    for (Document shift : availability) {
+                        String shiftDayString = shift.getString("day");
+                        if (shiftDayString.equalsIgnoreCase(dayOfWeekStr)) {
+                            LocalTime shiftTime = LocalTime.parse(shift.getString("shift"), DateTimeFormatter.ISO_LOCAL_TIME);
+                            shiftEmployeeQueueMap.get(shiftTime).offer(employee);
+                        }
                     }
                 }
             }
@@ -110,6 +111,8 @@ public class EmployeeRosterSystem implements CommandLineRunner {
             }
         }
     }
+
+
 
     @PostMapping("/generate-roster")
     public ResponseEntity<String> generateRosterFromRequest(@RequestBody List<Employee> employees) {
