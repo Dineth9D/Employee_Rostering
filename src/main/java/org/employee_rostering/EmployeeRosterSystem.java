@@ -31,7 +31,6 @@ public class EmployeeRosterSystem implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Nothing to do here
     }
 
     public void loadEmployeeData(List<Employee> employees) {

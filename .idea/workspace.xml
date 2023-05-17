@@ -144,7 +144,7 @@
       <workItem from="1684246136480" duration="16113000" />
       <workItem from="1684290621553" duration="843000" />
       <workItem from="1684291612910" duration="753000" />
-      <workItem from="1684293740923" duration="3052000" />
+      <workItem from="1684293740923" duration="3714000" />
     </task>
     <task id="LOCAL-00001" summary="Create as Spring Boot project">
       <created>1684176163185</created>
@@ -181,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684294855500</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Apply round robbin algorithm to the system.">
+      <created>1684298193345</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684298193345</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
