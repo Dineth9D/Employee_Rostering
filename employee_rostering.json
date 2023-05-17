@@ -1,102 +1,102 @@
 [
   {
-    "name": "Employee 1",
+    "name": "John",
     "availability": [
-      {"day": "Monday", "shift": "9am-5pm"},
-      {"day": "Tuesday", "shift": "9am-5pm"},
-      {"day": "Wednesday", "shift": "9am-5pm"},
-      {"day": "Thursday", "shift": "9am-5pm"},
-      {"day": "Friday", "shift": "9am-5pm"}
+      {
+        "day": "MONDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "TUESDAY",
+        "shift": "13:00:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "shift": "21:00:00"
+      },
+      {
+        "day": "THURSDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "FRIDAY",
+        "shift": "13:00:00"
+      }
     ]
   },
   {
-    "name": "Employee 2",
+    "name": "Alice",
     "availability": [
-      {"day": "Monday", "shift": "5pm-1am"},
-      {"day": "Tuesday", "shift": "5pm-1am"},
-      {"day": "Wednesday", "shift": "5pm-1am"},
-      {"day": "Thursday", "shift": "5pm-1am"},
-      {"day": "Friday", "shift": "5pm-1am"}
+      {
+        "day": "MONDAY",
+        "shift": "13:00:00"
+      },
+      {
+        "day": "TUESDAY",
+        "shift": "21:00:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "THURSDAY",
+        "shift": "13:00:00"
+      },
+      {
+        "day": "FRIDAY",
+        "shift": "21:00:00"
+      }
     ]
   },
   {
-    "name": "Employee 3",
+    "name": "Bob",
     "availability": [
-      {"day": "Monday", "shift": "9am-5pm"},
-      {"day": "Tuesday", "shift": "9am-5pm"},
-      {"day": "Wednesday", "shift": "9am-5pm"},
-      {"day": "Thursday", "shift": "9am-5pm"},
-      {"day": "Friday", "shift": "9am-5pm"}
+      {
+        "day": "MONDAY",
+        "shift": "21:00:00"
+      },
+      {
+        "day": "TUESDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "shift": "13:00:00"
+      },
+      {
+        "day": "THURSDAY",
+        "shift": "21:00:00"
+      },
+      {
+        "day": "FRIDAY",
+        "shift": "05:00:00"
+      }
     ]
   },
   {
-    "name": "Employee 4",
+    "name": "Emily",
     "availability": [
-      {"day": "Monday", "shift": "5pm-1am"},
-      {"day": "Tuesday", "shift": "5pm-1am"},
-      {"day": "Wednesday", "shift": "5pm-1am"},
-      {"day": "Thursday", "shift": "5pm-1am"},
-      {"day": "Friday", "shift": "5pm-1am"}
-    ]
-  },
-  {
-    "name": "Employee 5",
-    "availability": [
-      {"day": "Monday", "shift": "9am-5pm"},
-      {"day": "Tuesday", "shift": "9am-5pm"},
-      {"day": "Wednesday", "shift": "9am-5pm"},
-      {"day": "Thursday", "shift": "9am-5pm"},
-      {"day": "Friday", "shift": "9am-5pm"}
-    ]
-  },
-  {
-    "name": "Employee 6",
-    "availability": [
-      {"day": "Monday", "shift": "5pm-1am"},
-      {"day": "Tuesday", "shift": "5pm-1am"},
-      {"day": "Wednesday", "shift": "5pm-1am"},
-      {"day": "Thursday", "shift": "5pm-1am"},
-      {"day": "Friday", "shift": "5pm-1am"}
-    ]
-  },
-  {
-    "name": "Employee 7",
-    "availability": [
-      {"day": "Monday", "shift": "9am-5pm"},
-      {"day": "Tuesday", "shift": "9am-5pm"},
-      {"day": "Wednesday", "shift": "9am-5pm"},
-      {"day": "Thursday", "shift": "9am-5pm"},
-      {"day": "Friday", "shift": "9am-5pm"}
-    ]
-  },
-  {
-    "name": "Employee 8",
-    "availability": [
-      {"day": "Monday", "shift": "5pm-1am"},
-      {"day": "Tuesday", "shift": "5pm-1am"},
-      {"day": "Wednesday", "shift": "5pm-1am"},
-      {"day": "Thursday", "shift": "5pm-1am"},
-      {"day": "Friday", "shift": "5pm-1am"}
-    ]
-  },
-  {
-    "name": "Employee 9",
-    "availability": [
-      {"day": "Monday", "shift": "9am-5pm"},
-      {"day": "Tuesday", "shift": "9am-5pm"},
-      {"day": "Wednesday", "shift": "9am-5pm"},
-      {"day": "Thursday", "shift": "9am-5pm"},
-      {"day": "Friday", "shift": "9am-5pm"}
-    ]
-  },
-  {
-    "name": "Employee 10",
-    "availability": [
-      {"day": "Monday", "shift": "5pm-1am"},
-      {"day": "Tuesday", "shift": "5pm-1am"},
-      {"day": "Wednesday", "shift": "5pm-1am"},
-      {"day": "Thursday", "shift": "5pm-1am"},
-      {"day": "Friday", "shift": "5pm-1am"}
+      {
+        "day": "MONDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "TUESDAY",
+        "shift": "13:00:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "shift": "21:00:00"
+      },
+      {
+        "day": "THURSDAY",
+        "shift": "05:00:00"
+      },
+      {
+        "day": "FRIDAY",
+        "shift": "13:00:00"
+      }
     ]
   }
 ]

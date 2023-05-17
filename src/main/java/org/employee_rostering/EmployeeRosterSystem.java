@@ -30,25 +30,34 @@ public class EmployeeRosterSystem implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
+    public void run(String... args) { //
     }
 
     public void loadEmployeeData(List<Employee> employees) {
-        List<Document> documents = new ArrayList<>();
         for (Employee employee : employees) {
-            Document doc = new Document("name", employee.getName())
-                    .append("availability", employee.getAvailability())
-                    .append("shiftCount", 0);
-            documents.add(doc);
+            String name = employee.getName();
+
+            // Check if the employee with the same name already exists in the database
+            Document existingEmployee = mongoTemplate.getCollection("employees")
+                    .find(new Document("name", name))
+                    .first();
+
+            if (existingEmployee == null) {
+                Document doc = new Document("name", name)
+                        .append("availability", employee.getAvailability())
+                        .append("shiftCount", 0);
+                mongoTemplate.insert(doc, "employees");
+            }
         }
-        mongoTemplate.insert(documents, "employees");
     }
 
+
     public void generateRoster() {
-        // Get the distinct days from the collection
+        // Get the distinct days from the collection and sort them
         List<String> distinctDays = mongoTemplate.getCollection("employees")
                 .distinct("availability.day", String.class)
                 .into(new ArrayList<>());
+        Collections.sort(distinctDays);
 
         // Iterate over each distinct day
         for (String dayOfWeekStr : distinctDays) {
