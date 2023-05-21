@@ -15,19 +15,19 @@ public class Shift {
         this.day = day;
         this.shift = shift;
     }
-
+    // Retrieve the day of a shift
     public String getDay() {
         return day;
     }
-
+    // Set the day of a shift
     public void setDay(String day) {
         this.day = day;
     }
-
+    // Retrieve the time of a shift
     public String getShift() {
         return shift;
     }
-
+    // Set the time of a shift
     public void setShift(String shift) {
         this.shift = shift;
     }

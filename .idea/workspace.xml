@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Apply round robbin algorithm to the system.">
+    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Fix the data overwrite in the Database.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee_rostering.json" beforeDir="false" afterPath="$PROJECT_DIR$/employee_rostering.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +151,13 @@
       <workItem from="1684300805895" duration="363000" />
       <workItem from="1684301683180" duration="414000" />
       <workItem from="1684302118971" duration="599000" />
-      <workItem from="1684315366179" duration="4621000" />
+      <workItem from="1684315366179" duration="6386000" />
+      <workItem from="1684337716604" duration="1667000" />
+      <workItem from="1684418677057" duration="682000" />
+      <workItem from="1684421614122" duration="2018000" />
+      <workItem from="1684469388738" duration="107000" />
+      <workItem from="1684664905713" duration="753000" />
+      <workItem from="1684677204688" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="Create as Spring Boot project">
       <created>1684176163185</created>
@@ -200,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684298727215</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix the data overwrite in the Database.">
+      <created>1684320524761</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684320524761</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +227,8 @@
     <MESSAGE value="Set the REST API requests." />
     <MESSAGE value="Successfully send the POST request to server." />
     <MESSAGE value="Apply round robbin algorithm to the system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Apply round robbin algorithm to the system." />
+    <MESSAGE value="Fix the data overwrite in the Database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the data overwrite in the Database." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

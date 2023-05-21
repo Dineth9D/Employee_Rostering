@@ -11,10 +11,12 @@ public class Employee {
         this.availability = availability;
     }
 
+    // Retrieve the name of an employee
     public String getName() {
         return name;
     }
 
+    // Access the list of shifts an employee is available
     public List<Shift> getAvailability() {
         return availability;
     }
