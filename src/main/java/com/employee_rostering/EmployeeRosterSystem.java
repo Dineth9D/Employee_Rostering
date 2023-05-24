@@ -68,7 +68,7 @@ public class EmployeeRosterSystem implements CommandLineRunner {
 
         return availableEmployees;
     }
-
+    // Reminder
     private boolean isEmployeeAvailableForShift(Employee employee, Shift shift) {
         // Implement logic to determine if the employee is available for the shift
         // This could involve checking the employee's availability schedule, preferences, etc.
@@ -186,7 +186,6 @@ public class EmployeeRosterSystem implements CommandLineRunner {
                     Document employee = employeeQueue.poll();
                     if (employee != null) {
                         System.out.println("Assigned Employee: " + employee.getString("name"));
-                        // You can save the employee assignment or perform any other desired operations here
                     }
                 }
             }
