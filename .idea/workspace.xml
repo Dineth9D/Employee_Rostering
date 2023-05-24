@@ -4,12 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="Fix the data overwrite in the Database.">
+    <list default="true" id="a63ae5bb-5284-42f2-be39-2fc698fc8afb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeAssignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeSkillsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee_rostering.json" beforeDir="false" afterPath="$PROJECT_DIR$/employee_rostering.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bson-4.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bson-4.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bson-record-codec-4.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bson-record-codec-4.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongodb-driver-core-4.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mongodb-driver-core-4.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/slf4j-api-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/snakeyaml-2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-2.2.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-3.0.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-2.2.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-tx-6.0.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-tx-6.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/TestDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/employee_rostering.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,74 +82,58 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PpyHBZ5Pa6tBSFd9gGk8AqHGYZ" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2QCIGdUsNgPZWXFs5pktvwnaCZo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Employee Rostering/src/test/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.53333336&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;55cb805a8b234407bed2445671a8c3fb&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "484216ca7df7320594d08b48ffac3f0c",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Employee Rostering\src\test\resources" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.employee_rostering" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.EmployeeRosterSystem">
     <configuration name="EmployeeRosterSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.employee_rostering.EmployeeRosterSystem" />
-      <module name="employee-rostering" />
+      <option name="MAIN_CLASS_NAME" value="com.employee_rostering.EmployeeRosterSystem" />
+      <module name="Employee_Rostering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.employee_rostering.*" />
+          <option name="PATTERN" value="com.employee_rostering.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckHTTPResponce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="employee-rostering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.employee_rostering.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.employee_rostering" />
-      <option name="MAIN_CLASS_NAME" value="org.employee_rostering.CheckHTTPResponce" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,123 +152,41 @@
       </method>
     </configuration>
     <configuration name="EmployeeRosterSystem" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="employee-rostering" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.employee_rostering.EmployeeRosterSystem" />
+      <module name="Employee_Rostering" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.employee_rostering.EmployeeRosterSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CheckHTTPResponce" />
         <item itemvalue="Application.EmployeeRosterSystem" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b2dc6277-78cd-48c3-aaec-63170b8a5f36" name="Changes" comment="" />
-      <created>1684168232971</created>
+      <changelist id="a63ae5bb-5284-42f2-be39-2fc698fc8afb" name="Changes" comment="" />
+      <created>1684851047187</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684168232971</updated>
-      <workItem from="1684168233269" duration="414000" />
-      <workItem from="1684168885663" duration="251000" />
-      <workItem from="1684169308465" duration="130000" />
-      <workItem from="1684169448334" duration="751000" />
-      <workItem from="1684170219402" duration="6165000" />
-      <workItem from="1684205337271" duration="14062000" />
-      <workItem from="1684227676227" duration="1396000" />
-      <workItem from="1684229189878" duration="2383000" />
-      <workItem from="1684246136480" duration="16113000" />
-      <workItem from="1684290621553" duration="843000" />
-      <workItem from="1684291612910" duration="753000" />
-      <workItem from="1684293740923" duration="4948000" />
-      <workItem from="1684300805895" duration="363000" />
-      <workItem from="1684301683180" duration="414000" />
-      <workItem from="1684302118971" duration="599000" />
-      <workItem from="1684315366179" duration="6386000" />
-      <workItem from="1684337716604" duration="1667000" />
-      <workItem from="1684418677057" duration="682000" />
-      <workItem from="1684421614122" duration="2018000" />
-      <workItem from="1684469388738" duration="107000" />
-      <workItem from="1684664905713" duration="753000" />
-      <workItem from="1684677204688" duration="4843000" />
+      <updated>1684851047187</updated>
+      <workItem from="1684851047824" duration="1458000" />
+      <workItem from="1684853518159" duration="11325000" />
+      <workItem from="1684904916174" duration="2099000" />
+      <workItem from="1684922086456" duration="1126000" />
+      <workItem from="1684923239123" duration="22161000" />
     </task>
-    <task id="LOCAL-00001" summary="Create as Spring Boot project">
-      <created>1684176163185</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684176163185</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Create as Spring Boot project">
-      <created>1684176238291</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684176238291</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Set the REST API requests.">
-      <created>1684229560936</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1684229560936</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Successfully send the POST request to server.">
-      <created>1684251830768</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684251830768</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Apply round robbin algorithm to the system.">
-      <created>1684294855500</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684294855500</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Apply round robbin algorithm to the system.">
-      <created>1684298193345</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684298193345</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Apply round robbin algorithm to the system.">
-      <created>1684298727215</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684298727215</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Fix the data overwrite in the Database.">
-      <created>1684320524761</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684320524761</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create as Spring Boot project" />
-    <MESSAGE value="Set the REST API requests." />
-    <MESSAGE value="Successfully send the POST request to server." />
-    <MESSAGE value="Apply round robbin algorithm to the system." />
-    <MESSAGE value="Fix the data overwrite in the Database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the data overwrite in the Database." />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.cmd" />
   </component>
 </project>
