@@ -1,0 +1,39 @@
+import com.employee_rostering.EmployeeRosterApplication;
+import com.employee_rostering.ShiftAssignment;
+
+rule "maximumHoursPerWeek"
+    when
+        $assignment : ShiftAssignment($employee : employee, $hoursWorked : hoursWorked)
+        $system : EmployeeRosterApplication(maximumHoursPerWeekExceeded($employee, $hoursWorked))
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -$hoursWorked);
+end
+
+rule "minimumHoursPerWeek"
+    when
+        $assignment : ShiftAssignment($employee : employee, $hoursWorked : hoursWorked)
+        $system : EmployeeRosterApplication(minimumHoursPerWeekNotMet($employee, $hoursWorked))
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -$hoursWorked);
+end
+
+rule "shiftOnConsecutiveDays"
+    when
+        $assignment1 : ShiftAssignment($employee : employee, $date : date, $shiftType : shiftType)
+        $assignment2 : ShiftAssignment(
+            employee == $employee,
+            date == $date.plusDays(1),
+            shiftType != $shiftType
+        )
+        $system : EmployeeRosterApplication(shiftOnConsecutiveDays($assignment1, $assignment2))
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -1);
+end
+
+rule "maxShiftsPerDay"
+    when
+        $assignment : ShiftAssignment($date : date, $shiftType : shiftType)
+        $system : EmployeeRosterApplication(maxShiftsPerDayExceeded($date, $shiftType))
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -1);
+end

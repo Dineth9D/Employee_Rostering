@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Import the Java configuration class -->
+    <import class="com.example.OptaPlannerConfig" resource="optaplanner-config.xml"/>
+
+    <!-- Your existing OptaPlanner configuration -->
+    <solver>
+        <solutionClass>com.employee_rostering.EmployeeRoster</solutionClass>
+        <entityClass>com.employee_rostering.EmployeeAssignment</entityClass>
+
+        <!-- Define score constraints -->
+        <scoreDirectorFactory>
+            <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+            <scoreDrl>com/employee_rostering/employeeRosterScoreRules.drl</scoreDrl>
+        </scoreDirectorFactory>
+
+        <!-- Configure the construction heuristics -->
+        <constructionHeuristic>
+            <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+        </constructionHeuristic>
+
+        <!-- Configure the local search metaheuristics -->
+        <localSearch>
+            <unionMoveSelector>
+                <changeMoveSelector/>
+                <swapMoveSelector/>
+                <pillarChangeMoveSelector/>
+                <pillarSwapMoveSelector/>
+            </unionMoveSelector>
+            <acceptor>
+                <lateAcceptance/>
+            </acceptor>
+            <forager>
+                <acceptedCountLimit>1000</acceptedCountLimit>
+            </forager>
+        </localSearch>
+    </solver>
+</beans>
