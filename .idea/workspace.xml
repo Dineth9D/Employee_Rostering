@@ -4,65 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a63ae5bb-5284-42f2-be39-2fc698fc8afb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeAssignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeSkillsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a63ae5bb-5284-42f2-be39-2fc698fc8afb" name="Changes" comment="Add employee skills to generate the roster.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeRoster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeRosterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/OptaPlannerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/OptaPlannerSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/ShiftAssignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/employeeRosterScoreRules.drl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/optaplanner-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bson-4.8.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bson-4.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bson-record-codec-4.8.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bson-record-codec-4.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongo-java-driver-3.12.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongodb-driver-core-4.8.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongodb-driver-core-4.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/slf4j-api-2.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/snakeyaml-2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aop-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-beans-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-context-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-core-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-2.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-3.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-2.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-mongodb-4.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-expression-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-jcl-6.0.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-tx-6.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-tx-6.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/employee_rostering/Shift.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/EmployeeRosterSystemTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/employee_rostering/TestDataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/employee_rostering.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeAssignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeRosterSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeRosterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeSkillsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/EmployeeSkillsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/employee_rostering/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/employee_rostering/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="spring-beans.schema" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -87,32 +44,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "484216ca7df7320594d08b48ffac3f0c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;484216ca7df7320594d08b48ffac3f0c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.employee_rostering" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Employee Rostering\src\main\java\com\employee_rostering" />
+      <recent name="C:\Employee Rostering\src\main\resources" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.employee_rostering" />
     </key>
@@ -124,9 +88,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EmployeeRosterSystem">
-    <configuration name="EmployeeRosterSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.employee_rostering.EmployeeRosterSystem" />
+  <component name="RunManager" selected="Spring Boot.EmployeeRosterApplication">
+    <configuration name="EmployeeRosterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.employee_rostering.EmployeeRosterApplication" />
       <module name="Employee_Rostering" />
       <extension name="coverage">
         <pattern>
@@ -151,16 +115,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeRosterSystem" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="EmployeeRosterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Employee_Rostering" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.employee_rostering.EmployeeRosterSystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.employee_rostering.EmployeeRosterApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EmployeeRosterSystem" />
+        <item itemvalue="Application.EmployeeRosterApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -179,8 +143,38 @@
       <workItem from="1684853518159" duration="11325000" />
       <workItem from="1684904916174" duration="2099000" />
       <workItem from="1684922086456" duration="1126000" />
-      <workItem from="1684923239123" duration="22161000" />
+      <workItem from="1684923239123" duration="23458000" />
+      <workItem from="1685021989118" duration="2424000" />
+      <workItem from="1685105017063" duration="6023000" />
+      <workItem from="1685116136007" duration="2880000" />
+      <workItem from="1685158590744" duration="8024000" />
+      <workItem from="1685199140469" duration="4601000" />
+      <workItem from="1685204718849" duration="2807000" />
+      <workItem from="1685242718675" duration="11778000" />
+      <workItem from="1685260119507" duration="301000" />
     </task>
+    <task id="LOCAL-00001" summary="Add employee skills to generate the roster.">
+      <created>1684953174886</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684953174886</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add employee skills to generate the roster.">
+      <created>1684953264349</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684953264349</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add employee skills to generate the roster.">
+      <created>1684953660109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684953660109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,5 +182,9 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.cmd" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add employee skills to generate the roster." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add employee skills to generate the roster." />
   </component>
 </project>
